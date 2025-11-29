@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIPI Travel Assistant - Your Personalized Travel Planner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">🌍 TIPI Travel Assistant</h1>
+            <p class="tagline">Design better trips without the stress</p>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main-container">
+        <!-- Questionnaire Section -->
+        <section id="questionnaire-section" class="section active">
+            <div class="container">
+                <h2 class="section-title">Tell Us About Your Dream Trip</h2>
+                <p class="section-subtitle">Answer 10 questions to get your personalized itinerary</p>
+                
+                <form id="tipi-questionnaire" class="questionnaire-form">
+                    <!-- Question 1: Destination -->
+                    <div class="question-group">
+                        <label for="destination">1. Where do you want to travel? *</label>
+                        <input type="text" id="destination" name="destination" required 
+                               placeholder="e.g., New York City, Paris, Tokyo">
+                    </div>
+
+                    <!-- Question 2: Number of Days -->
+                    <div class="question-group">
+                        <label for="days">2. How many days will you be traveling? *</label>
+                        <input type="number" id="days" name="days" min="1" max="30" required 
+                               placeholder="e.g., 5">
+                    </div>
+
+                    <!-- Question 3: Preferred Experiences -->
+                    <div class="question-group">
+                        <label>3. What experiences are you most interested in? (Select all that apply) *</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="experiences" value="food"> 🍽️ Food & Dining
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="experiences" value="culture"> 🏛️ Culture & History
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="experiences" value="adventure"> ⛰️ Adventure & Outdoor
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="experiences" value="shopping"> 🛍️ Shopping
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="experiences" value="nightlife"> 🌃 Nightlife
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="experiences" value="relaxation"> 🏖️ Relaxation & Wellness
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 4: Dietary Restrictions -->
+                    <div class="question-group">
+                        <label for="dietary">4. Do you have any dietary restrictions or preferences?</label>
+                        <select id="dietary" name="dietary">
+                            <option value="none">None</option>
+                            <option value="vegetarian">Vegetarian</option>
+                            <option value="vegan">Vegan</option>
+                            <option value="halal">Halal</option>
+                            <option value="kosher">Kosher</option>
+                            <option value="gluten-free">Gluten-Free</option>
+                            <option value="dairy-free">Dairy-Free</option>
+                        </select>
+                    </div>
+
+                    <!-- Question 5: Transportation -->
+                    <div class="question-group">
+                        <label for="transportation">5. What is your preferred mode of transportation? *</label>
+                        <select id="transportation" name="transportation" required>
+                            <option value="">Select an option</option>
+                            <option value="walking">Walking</option>
+                            <option value="public-transport">Public Transportation (Subway/Bus)</option>
+                            <option value="rideshare">Rideshare (Uber/Lyft)</option>
+                            <option value="rental-car">Rental Car</option>
+                            <option value="mixed">Mixed (Walking + Public Transport)</option>
+                        </select>
+                    </div>
+
+                    <!-- Question 6: Accommodation Priority -->
+                    <div class="question-group">
+                        <label for="accommodation">6. What is your accommodation priority? *</label>
+                        <select id="accommodation" name="accommodation" required>
+                            <option value="">Select an option</option>
+                            <option value="budget">Budget-Friendly</option>
+                            <option value="mid-range">Mid-Range</option>
+                            <option value="luxury">Luxury</option>
+                            <option value="location">Location (Close to Attractions)</option>
+                            <option value="unique">Unique Experience</option>
+                        </select>
+                    </div>
+
+                    <!-- Question 7: Budget -->
+                    <div class="question-group">
+                        <label for="budget">7. What is your daily budget per person? *</label>
+                        <select id="budget" name="budget" required>
+                            <option value="">Select an option</option>
+                            <option value="budget">Budget ($50-100/day)</option>
+                            <option value="moderate">Moderate ($100-200/day)</option>
+                            <option value="comfortable">Comfortable ($200-400/day)</option>
+                            <option value="luxury">Luxury ($400+/day)</option>
+                        </select>
+                    </div>
+
+                    <!-- Question 8: Pacing -->
+                    <div class="question-group">
+                        <label for="pacing">8. What is your preferred travel pace? *</label>
+                        <select id="pacing" name="pacing" required>
+                            <option value="">Select an option</option>
+                            <option value="relaxed">Relaxed (Fewer activities, more free time)</option>
+                            <option value="moderate">Moderate (Balanced schedule)</option>
+                            <option value="fast-paced">Fast-Paced (Many activities, tight schedule)</option>
+                        </select>
+                    </div>
+
+                    <!-- Question 9: Activities to Avoid -->
+                    <div class="question-group">
+                        <label for="avoid">9. Are there any activities or experiences you want to avoid?</label>
+                        <textarea id="avoid" name="avoid" rows="3" 
+                                  placeholder="e.g., Crowded tourist spots, extreme sports, nightclubs"></textarea>
+                    </div>
+
+                    <!-- Question 10: Must-See Attractions -->
+                    <div class="question-group">
+                        <label for="mustSee">10. Are there any specific attractions or places you must visit?</label>
+                        <textarea id="mustSee" name="mustSee" rows="3" 
+                                  placeholder="e.g., Eiffel Tower, Times Square, specific museums"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">Generate My Itinerary</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Itinerary Section -->
+        <section id="itinerary-section" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Your Personalized Itinerary</h2>
+                    <button id="back-to-questionnaire" class="btn btn-secondary">Start Over</button>
+                </div>
+                
+                <div id="loading" class="loading hidden">
+                    <div class="spinner"></div>
+                    <p>Creating your personalized itinerary...</p>
+                </div>
+
+                <div id="itinerary-content" class="itinerary-content"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chatbot Section -->
+    <div id="chatbot-container" class="chatbot-container">
+        <div id="chatbot-toggle" class="chatbot-toggle">
+            <span>💬</span>
+        </div>
+        <div id="chatbot-window" class="chatbot-window hidden">
+            <div class="chatbot-header">
+                <h3>AI Travel Assistant</h3>
+                <button id="chatbot-close" class="chatbot-close">×</button>
+            </div>
+            <div id="chatbot-messages" class="chatbot-messages"></div>
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Ask me anything about your trip..." />
+                <button id="chatbot-send" class="btn btn-primary">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
